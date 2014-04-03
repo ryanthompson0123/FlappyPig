@@ -13,6 +13,7 @@
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property (nonatomic) NSTimeInterval lastGateSpawnTimeInterval;
 @property (nonatomic) NSTimeInterval lastBackgroundTimeInterval;
+@property (nonatomic) Piggy *player;
 
 @end
 
@@ -23,6 +24,15 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
+        // Set up the physics world
+        self.physicsWorld.gravity = CGVectorMake(0, -5);
+        
+        // Set up the player
+        self.player = [[Piggy alloc] init];
+        self.player.position = CGPointMake(self.player.size.width/2 + 100,
+                                           self.frame.size.height - self.player.size.height/2 + 100);
+        [self addChild:self.player];
+        
         // Set this to make the background spawn immediately
         self.lastBackgroundTimeInterval = 31;
     }
@@ -32,6 +42,12 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch begins */
+    
+    // If the game is running, then any touch flaps the pig
+    if (self.player && !self.player.isDead) {
+        [self.player flap];
+        return;
+    }
 }
 
 - (void)update:(CFTimeInterval)currentTime

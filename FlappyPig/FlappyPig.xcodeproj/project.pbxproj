@@ -33,6 +33,7 @@
 		94F19E0418ED00280094F736 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F19E0018ED00280094F736 /* Goal.m */; };
 		94F19E0518ED00280094F736 /* Pipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F19E0218ED00280094F736 /* Pipe.m */; };
 		94F19E0818ED023E0094F736 /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F19E0718ED023E0094F736 /* Background.m */; };
+		94F19E0C18ED03C40094F736 /* Piggy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F19E0B18ED03C40094F736 /* Piggy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		94F19E0218ED00280094F736 /* Pipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pipe.m; sourceTree = "<group>"; };
 		94F19E0618ED023E0094F736 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
 		94F19E0718ED023E0094F736 /* Background.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Background.m; sourceTree = "<group>"; };
+		94F19E0A18ED03C40094F736 /* Piggy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piggy.h; sourceTree = "<group>"; };
+		94F19E0B18ED03C40094F736 /* Piggy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piggy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 		94D0D89518ECFB5800229CC1 /* FlappyPig */ = {
 			isa = PBXGroup;
 			children = (
+				94F19E0A18ED03C40094F736 /* Piggy.h */,
+				94F19E0B18ED03C40094F736 /* Piggy.m */,
 				94F19E0618ED023E0094F736 /* Background.h */,
 				94F19E0718ED023E0094F736 /* Background.m */,
 				94F19DFD18ED00280094F736 /* Gate.h */,
@@ -302,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F19E0C18ED03C40094F736 /* Piggy.m in Sources */,
 				94F19E0418ED00280094F736 /* Goal.m in Sources */,
 				94F19E0518ED00280094F736 /* Pipe.m in Sources */,
 				94F19E0318ED00280094F736 /* Gate.m in Sources */,
