@@ -14,5 +14,7 @@
 
 - (id)init;
 - (void)flap;
+- (void)squeal;
+- (void)oink;
 
 @end

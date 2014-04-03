@@ -55,9 +55,24 @@
         // the 'up' texture
         SKAction *animate = [SKAction animateWithTextures:@[self.flapDownTexture, self.flapUpTexture] timePerFrame:0.2 resize:NO restore:NO];
         
+        // Play the flapping sound effect
+        SKAction *swoosh =[SKAction playSoundFileNamed:@"swoosh.caf" waitForCompletion:NO];
+        
         // Run the actions
-        [self runAction:animate];
+        [self runAction:[SKAction sequence:@[swoosh, animate]]];
     }
+}
+
+- (void)oink
+{
+    SKAction *oink = [SKAction playSoundFileNamed:@"oink.caf" waitForCompletion:NO];
+    [self runAction:oink];
+}
+
+- (void)squeal
+{
+    SKAction *squeal = [SKAction playSoundFileNamed:@"squeal.caf" waitForCompletion:NO];
+    [self runAction:squeal];
 }
 
 @end

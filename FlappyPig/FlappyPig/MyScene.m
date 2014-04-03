@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Ryan Thompson. All rights reserved.
 //
 
+@import AVFoundation;
 #import "MyScene.h"
 
 @interface MyScene () <SKPhysicsContactDelegate>
@@ -15,6 +16,7 @@
 @property (nonatomic) NSTimeInterval lastBackgroundTimeInterval;
 @property (nonatomic) Piggy *player;
 @property (nonatomic) int score;
+@property (nonatomic) AVAudioPlayer *backgroundPlayer;
 
 @end
 
@@ -37,6 +39,9 @@
         
         // Set this to make the background spawn immediately
         self.lastBackgroundTimeInterval = 31;
+        
+        // Start background music
+        [self startBackgroundMusic];
     }
     return self;
 }
@@ -134,10 +139,10 @@
         (secondBody.categoryBitMask & playerCategory) != 0)
     {
         // Player contacted the goal - SCORE!
+        [self.player oink];
         self.score++;
     }
 }
-
 
 - (void)addGate {
     // Determine where the center of the gate will be
@@ -167,6 +172,25 @@
     [background slideToPosition:CGPointMake(0, background.size.height/2) withDuration:30.0];
 }
 
+- (void)startBackgroundMusic
+{
+    NSError *anError;
+    NSURL *file = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"piggy.mp3" ofType:nil]];
+    self.backgroundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:file error:&anError];
+    
+    if (anError) {
+        NSLog(@"Couldn't play audio file because %@", [anError userInfo]);
+        return;
+    }
+    
+    [self.backgroundPlayer prepareToPlay];
+    
+    // Plays the music indefinitely
+    self.backgroundPlayer.numberOfLoops = -1;
+    [self.backgroundPlayer setVolume:1.0];
+    [self.backgroundPlayer play];
+}
+
 - (void)gameOver
 {
     if (self.player.isDead) {
@@ -175,6 +199,10 @@
     
     // Kill the player
     self.player.isDead = YES;
+    [self.player squeal];
+    
+    // Stop the music
+    [self.backgroundPlayer stop];
     
     // Stop all animations except the player
     for (SKNode *node in self.children) {
