@@ -18,13 +18,17 @@
 		94D0D8A618ECFB5800229CC1 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D0D8A418ECFB5800229CC1 /* Main_iPad.storyboard */; };
 		94D0D8A918ECFB5900229CC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D0D8A818ECFB5900229CC1 /* ViewController.m */; };
 		94D0D8AC18ECFB5900229CC1 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D0D8AB18ECFB5900229CC1 /* MyScene.m */; };
-		94D0D8AE18ECFB5900229CC1 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D0D8AD18ECFB5900229CC1 /* Spaceship.png */; };
 		94D0D8B018ECFB5900229CC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D0D8AF18ECFB5900229CC1 /* Images.xcassets */; };
 		94D0D8B718ECFB5900229CC1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D0D8B618ECFB5900229CC1 /* XCTest.framework */; };
 		94D0D8B818ECFB5900229CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D0D88D18ECFB5800229CC1 /* Foundation.framework */; };
 		94D0D8B918ECFB5900229CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D0D89118ECFB5800229CC1 /* UIKit.framework */; };
 		94D0D8C118ECFB5900229CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94D0D8BF18ECFB5900229CC1 /* InfoPlist.strings */; };
 		94D0D8C318ECFB5900229CC1 /* FlappyPigTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D0D8C218ECFB5900229CC1 /* FlappyPigTests.m */; };
+		94F19DF418ECFE440094F736 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 94F19DF318ECFE440094F736 /* sprites.atlas */; };
+		94F19DF918ECFE6A0094F736 /* oink.caf in Resources */ = {isa = PBXBuildFile; fileRef = 94F19DF518ECFE6A0094F736 /* oink.caf */; };
+		94F19DFA18ECFE6A0094F736 /* piggy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94F19DF618ECFE6A0094F736 /* piggy.mp3 */; };
+		94F19DFB18ECFE6A0094F736 /* squeal.caf in Resources */ = {isa = PBXBuildFile; fileRef = 94F19DF718ECFE6A0094F736 /* squeal.caf */; };
+		94F19DFC18ECFE6A0094F736 /* swoosh.caf in Resources */ = {isa = PBXBuildFile; fileRef = 94F19DF818ECFE6A0094F736 /* swoosh.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,13 +59,17 @@
 		94D0D8A818ECFB5900229CC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		94D0D8AA18ECFB5900229CC1 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		94D0D8AB18ECFB5900229CC1 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		94D0D8AD18ECFB5900229CC1 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		94D0D8AF18ECFB5900229CC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		94D0D8B518ECFB5900229CC1 /* FlappyPigTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyPigTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D0D8B618ECFB5900229CC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		94D0D8BE18ECFB5900229CC1 /* FlappyPigTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlappyPigTests-Info.plist"; sourceTree = "<group>"; };
 		94D0D8C018ECFB5900229CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94D0D8C218ECFB5900229CC1 /* FlappyPigTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlappyPigTests.m; sourceTree = "<group>"; };
+		94F19DF318ECFE440094F736 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		94F19DF518ECFE6A0094F736 /* oink.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oink.caf; sourceTree = "<group>"; };
+		94F19DF618ECFE6A0094F736 /* piggy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piggy.mp3; sourceTree = "<group>"; };
+		94F19DF718ECFE6A0094F736 /* squeal.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = squeal.caf; sourceTree = "<group>"; };
+		94F19DF818ECFE6A0094F736 /* swoosh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,11 @@
 		94D0D89518ECFB5800229CC1 /* FlappyPig */ = {
 			isa = PBXGroup;
 			children = (
+				94F19DF518ECFE6A0094F736 /* oink.caf */,
+				94F19DF618ECFE6A0094F736 /* piggy.mp3 */,
+				94F19DF718ECFE6A0094F736 /* squeal.caf */,
+				94F19DF818ECFE6A0094F736 /* swoosh.caf */,
+				94F19DF318ECFE440094F736 /* sprites.atlas */,
 				94D0D89E18ECFB5800229CC1 /* AppDelegate.h */,
 				94D0D89F18ECFB5800229CC1 /* AppDelegate.m */,
 				94D0D8A118ECFB5800229CC1 /* Main_iPhone.storyboard */,
@@ -131,7 +144,6 @@
 				94D0D8A818ECFB5900229CC1 /* ViewController.m */,
 				94D0D8AA18ECFB5900229CC1 /* MyScene.h */,
 				94D0D8AB18ECFB5900229CC1 /* MyScene.m */,
-				94D0D8AD18ECFB5900229CC1 /* Spaceship.png */,
 				94D0D8AF18ECFB5900229CC1 /* Images.xcassets */,
 				94D0D89618ECFB5800229CC1 /* Supporting Files */,
 			);
@@ -243,10 +255,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D0D8AE18ECFB5900229CC1 /* Spaceship.png in Resources */,
+				94F19DF418ECFE440094F736 /* sprites.atlas in Resources */,
 				94D0D8B018ECFB5900229CC1 /* Images.xcassets in Resources */,
+				94F19DFA18ECFE6A0094F736 /* piggy.mp3 in Resources */,
 				94D0D8A618ECFB5800229CC1 /* Main_iPad.storyboard in Resources */,
+				94F19DF918ECFE6A0094F736 /* oink.caf in Resources */,
+				94F19DFB18ECFE6A0094F736 /* squeal.caf in Resources */,
 				94D0D8A318ECFB5800229CC1 /* Main_iPhone.storyboard in Resources */,
+				94F19DFC18ECFE6A0094F736 /* swoosh.caf in Resources */,
 				94D0D89A18ECFB5800229CC1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +502,7 @@
 				94D0D8C818ECFB5900229CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94D0D8C918ECFB5900229CC1 /* Build configuration list for PBXNativeTarget "FlappyPigTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +511,7 @@
 				94D0D8CB18ECFB5900229CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
