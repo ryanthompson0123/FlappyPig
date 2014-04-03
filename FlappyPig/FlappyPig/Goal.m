@@ -13,6 +13,8 @@
 -(id)init
 {
     if (self = [super initWithImageNamed:@"goal"]) {
+        self.alpha = (CGFloat)0.0f;
+        
         // Set up physics stuff
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
         self.physicsBody.dynamic = NO;

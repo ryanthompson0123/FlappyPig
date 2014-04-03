@@ -10,6 +10,7 @@
 #include "Gate.h"
 #include "Background.h"
 #include "Piggy.h"
+#include "StatusLabel.h"
 
 @interface MyScene : SKScene
 

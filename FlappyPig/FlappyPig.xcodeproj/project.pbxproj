@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940124DC18ED1ABB00F8AEA5 /* StatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 940124DB18ED1ABB00F8AEA5 /* StatusLabel.m */; };
 		94D0D88E18ECFB5800229CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D0D88D18ECFB5800229CC1 /* Foundation.framework */; };
 		94D0D89018ECFB5800229CC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D0D88F18ECFB5800229CC1 /* CoreGraphics.framework */; };
 		94D0D89218ECFB5800229CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D0D89118ECFB5800229CC1 /* UIKit.framework */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		940124DA18ED1ABB00F8AEA5 /* StatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusLabel.h; sourceTree = "<group>"; };
+		940124DB18ED1ABB00F8AEA5 /* StatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusLabel.m; sourceTree = "<group>"; };
 		94D0D88A18ECFB5800229CC1 /* FlappyPig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyPig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D0D88D18ECFB5800229CC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94D0D88F18ECFB5800229CC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +150,8 @@
 		94D0D89518ECFB5800229CC1 /* FlappyPig */ = {
 			isa = PBXGroup;
 			children = (
+				940124DA18ED1ABB00F8AEA5 /* StatusLabel.h */,
+				940124DB18ED1ABB00F8AEA5 /* StatusLabel.m */,
 				94F19E0D18ED05100094F736 /* Categories.h */,
 				94F19E0A18ED03C40094F736 /* Piggy.h */,
 				94F19E0B18ED03C40094F736 /* Piggy.m */,
@@ -309,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940124DC18ED1ABB00F8AEA5 /* StatusLabel.m in Sources */,
 				94F19E0C18ED03C40094F736 /* Piggy.m in Sources */,
 				94F19E0418ED00280094F736 /* Goal.m in Sources */,
 				94F19E0518ED00280094F736 /* Pipe.m in Sources */,

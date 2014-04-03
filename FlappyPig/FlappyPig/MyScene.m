@@ -17,6 +17,7 @@
 @property (nonatomic) Piggy *player;
 @property (nonatomic) int score;
 @property (nonatomic) AVAudioPlayer *backgroundPlayer;
+@property (nonatomic) SKLabelNode *scoreLabel;
 
 @end
 
@@ -31,17 +32,16 @@
         self.physicsWorld.gravity = CGVectorMake(0, -5);
         self.physicsWorld.contactDelegate = self;
         
-        // Set up the player
-        self.player = [[Piggy alloc] init];
-        self.player.position = CGPointMake(self.player.size.width/2 + 100,
-                                           self.frame.size.height - self.player.size.height/2 + 100);
-        [self addChild:self.player];
+        // Set up the initial background
+        Background *background = [[Background alloc] init];
+        background.position = CGPointMake(background.size.width/2, background.size.height/2);
         
-        // Set this to make the background spawn immediately
-        self.lastBackgroundTimeInterval = 31;
+        [self addChild:background];
         
-        // Start background music
-        [self startBackgroundMusic];
+        // Set up start label
+        StatusLabel *label = [[StatusLabel alloc] initWithName:@"startLabel" text:@"Tap to Start"];
+        label.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.6);
+        [self addChild:label];
     }
     return self;
 }
@@ -54,6 +54,25 @@
     if (self.player && !self.player.isDead) {
         [self.player flap];
         return;
+    }
+    
+    // Otherwise, the user probably touched a label
+    for (UITouch *touch in touches) {
+        // Get the node where the user touched
+        SKNode *n = [self nodeAtPoint:[touch locationInNode:self]];
+        
+        // Skip over the scene node
+        if (n == self) {
+            continue;
+        }
+        
+        // Check to see if it's one of the labels
+        if ([n.name isEqualToString:@"restartLabel"] ||
+            [n.name isEqualToString:@"startLabel"])
+        {
+            [self startGame];
+            return;
+        }
     }
 }
 
@@ -141,7 +160,32 @@
         // Player contacted the goal - SCORE!
         [self.player oink];
         self.score++;
+        self.scoreLabel.text = [NSString stringWithFormat:@"SCORE: %d", self.score];
     }
+}
+
+- (void)startGame {
+    [self removeAllChildren];
+    
+    // Set up the score label
+    self.score = 0;
+    self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    self.scoreLabel.position = CGPointMake(100, 20);
+    self.scoreLabel.text = @"SCORE: 0";
+    
+    [self addChild:self.scoreLabel];
+    
+    // Set up the player
+    self.player = [[Piggy alloc] init];
+    self.player.position = CGPointMake(self.player.size.width/2 + 100,
+                                       self.frame.size.height - self.player.size.height/2 + 100);
+    [self addChild:self.player];
+    
+    // Set this to make the background spawn immediately
+    self.lastBackgroundTimeInterval = 31;
+    
+    // Start background music
+    [self startBackgroundMusic];
 }
 
 - (void)addGate {
@@ -212,6 +256,25 @@
         
         [node removeAllActions];
     }
+    
+    // Set up the 'Game Over' label
+    StatusLabel *label = [[StatusLabel alloc] initWithName:@"gameOverLabel" text:@"Game Over"];
+    label.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.7);
+    
+    [self addChild:label];
+    
+    // Set up the 'Score' label
+    NSString *scoreString = [NSString stringWithFormat:@"Your Score: %d", self.score];
+    StatusLabel *yourScore = [[StatusLabel alloc] initWithName:@"scoreLabel" text:scoreString];
+    yourScore.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.5);
+    
+    [self addChild:yourScore];
+    
+    // Set up the 'Try Again?' label
+    StatusLabel *restartLabel = [[StatusLabel alloc] initWithName:@"restartLabel" text:@"Try Again?"];
+    restartLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.3);
+    
+    [self addChild:restartLabel];
 }
 
 
