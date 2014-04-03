@@ -18,6 +18,12 @@
         if (inverted) {
             self.zRotation = M_PI;
         }
+        
+        // Set up physics stuff
+        self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
+        self.physicsBody.dynamic = NO;  // Isn't moved by physics engine
+        self.physicsBody.categoryBitMask = pipeCategory;
+        self.physicsBody.collisionBitMask = 0;
     }
     
     return self;

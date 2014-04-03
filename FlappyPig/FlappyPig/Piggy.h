@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#include "Categories.h"
 
 @interface Piggy : SKSpriteNode
 @property (nonatomic) BOOL isDead;

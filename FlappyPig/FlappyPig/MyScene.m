@@ -83,6 +83,16 @@
         self.lastBackgroundTimeInterval = 0;
         [self restartBackground];
     }
+    
+    // Check to see if the player is above the screen
+    if (self.player.position.y + self.player.size.height/2 >= self.frame.size.height) {
+        // Apply momentum equal to inverse of
+        // current momentum if the player is travelling up
+        if (self.player.physicsBody.velocity.dy > 0.0f) {
+            CGFloat momentum = -(self.player.physicsBody.mass * self.player.physicsBody.velocity.dy);
+            [self.player.physicsBody applyImpulse:CGVectorMake(0.0f, momentum)];
+        }
+    }
 }
 
 - (void)addGate {

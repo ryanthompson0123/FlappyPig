@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#include "Categories.h"
 
 @interface Pipe : SKSpriteNode
 

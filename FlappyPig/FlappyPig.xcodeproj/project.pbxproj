@@ -85,6 +85,7 @@
 		94F19E0718ED023E0094F736 /* Background.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Background.m; sourceTree = "<group>"; };
 		94F19E0A18ED03C40094F736 /* Piggy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piggy.h; sourceTree = "<group>"; };
 		94F19E0B18ED03C40094F736 /* Piggy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piggy.m; sourceTree = "<group>"; };
+		94F19E0D18ED05100094F736 /* Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +147,7 @@
 		94D0D89518ECFB5800229CC1 /* FlappyPig */ = {
 			isa = PBXGroup;
 			children = (
+				94F19E0D18ED05100094F736 /* Categories.h */,
 				94F19E0A18ED03C40094F736 /* Piggy.h */,
 				94F19E0B18ED03C40094F736 /* Piggy.m */,
 				94F19E0618ED023E0094F736 /* Background.h */,

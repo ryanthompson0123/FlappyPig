@@ -31,6 +31,8 @@
         // Set up the physics body
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
         self.physicsBody.mass = 1.0;
+        self.physicsBody.categoryBitMask = playerCategory;
+        self.physicsBody.collisionBitMask = pipeCategory;
         
         // Load up the downflap texture and save references to both
         self.flapDownTexture = [SKTexture textureWithImageNamed:@"pig_down"];
