@@ -1,14 +1,15 @@
 //
-//  MyScene.h
+//  Pipe.h
 //  FlappyPig
 //
-
+//  Created by Ryan Thompson on 2/17/14.
 //  Copyright (c) 2014 Ryan Thompson. All rights reserved.
 //
 
 #import <SpriteKit/SpriteKit.h>
-#include "Gate.h"
 
-@interface MyScene : SKScene
+@interface Pipe : SKSpriteNode
+
+- (id)initInverted:(BOOL)inverted;
 
 @end
