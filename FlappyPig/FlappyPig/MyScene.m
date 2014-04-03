@@ -12,6 +12,7 @@
 
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property (nonatomic) NSTimeInterval lastGateSpawnTimeInterval;
+@property (nonatomic) NSTimeInterval lastBackgroundTimeInterval;
 
 @end
 
@@ -22,9 +23,8 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        // Set the background color (not needed once we put background motion in)
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-
+        // Set this to make the background spawn immediately
+        self.lastBackgroundTimeInterval = 31;
     }
     return self;
 }
@@ -54,11 +54,18 @@
 {
     // Update spawn tracker
     self.lastGateSpawnTimeInterval += timeSinceLast;
+    self.lastBackgroundTimeInterval += timeSinceLast;
     
     // Check to see if it's time to spawn a gate
     if (self.lastGateSpawnTimeInterval > 4) {
         self.lastGateSpawnTimeInterval = 0;
         [self addGate];
+    }
+    
+    // Check to see if we need to restart the background motion
+    if (self.lastBackgroundTimeInterval > 30) {
+        self.lastBackgroundTimeInterval = 0;
+        [self restartBackground];
     }
 }
 
@@ -78,6 +85,16 @@
     // Slide the gate
     [gate slideToPosition:CGPointMake(-gate.size.width/2, yCenter)
              withDuration:8.0];
+}
+
+- (void)restartBackground {
+    Background *background = [[Background alloc] init];
+    background.position = CGPointMake(background.size.width/2,
+                                      background.size.height/2);
+    
+    [self addChild:background];
+    
+    [background slideToPosition:CGPointMake(0, background.size.height/2) withDuration:30.0];
 }
 
 @end

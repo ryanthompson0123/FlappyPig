@@ -32,6 +32,7 @@
 		94F19E0318ED00280094F736 /* Gate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F19DFE18ED00280094F736 /* Gate.m */; };
 		94F19E0418ED00280094F736 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F19E0018ED00280094F736 /* Goal.m */; };
 		94F19E0518ED00280094F736 /* Pipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F19E0218ED00280094F736 /* Pipe.m */; };
+		94F19E0818ED023E0094F736 /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F19E0718ED023E0094F736 /* Background.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		94F19E0018ED00280094F736 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
 		94F19E0118ED00280094F736 /* Pipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pipe.h; sourceTree = "<group>"; };
 		94F19E0218ED00280094F736 /* Pipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pipe.m; sourceTree = "<group>"; };
+		94F19E0618ED023E0094F736 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
+		94F19E0718ED023E0094F736 /* Background.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Background.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 		94D0D89518ECFB5800229CC1 /* FlappyPig */ = {
 			isa = PBXGroup;
 			children = (
+				94F19E0618ED023E0094F736 /* Background.h */,
+				94F19E0718ED023E0094F736 /* Background.m */,
 				94F19DFD18ED00280094F736 /* Gate.h */,
 				94F19DFE18ED00280094F736 /* Gate.m */,
 				94F19DFF18ED00280094F736 /* Goal.h */,
@@ -304,6 +309,7 @@
 				94D0D8A918ECFB5900229CC1 /* ViewController.m in Sources */,
 				94D0D8A018ECFB5800229CC1 /* AppDelegate.m in Sources */,
 				94D0D89C18ECFB5800229CC1 /* main.m in Sources */,
+				94F19E0818ED023E0094F736 /* Background.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

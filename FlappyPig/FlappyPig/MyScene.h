@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #include "Gate.h"
+#include "Background.h"
 
 @interface MyScene : SKScene
 
