@@ -13,6 +13,11 @@
 -(id)init
 {
     if (self = [super initWithImageNamed:@"goal"]) {
+        // Set up physics stuff
+        self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
+        self.physicsBody.dynamic = NO;
+        self.physicsBody.categoryBitMask = goalCategory;
+        self.physicsBody.contactTestBitMask = playerCategory;
     }
     
     return self;

@@ -8,12 +8,13 @@
 
 #import "MyScene.h"
 
-@interface MyScene ()
+@interface MyScene () <SKPhysicsContactDelegate>
 
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property (nonatomic) NSTimeInterval lastGateSpawnTimeInterval;
 @property (nonatomic) NSTimeInterval lastBackgroundTimeInterval;
 @property (nonatomic) Piggy *player;
+@property (nonatomic) int score;
 
 @end
 
@@ -26,6 +27,7 @@
         
         // Set up the physics world
         self.physicsWorld.gravity = CGVectorMake(0, -5);
+        self.physicsWorld.contactDelegate = self;
         
         // Set up the player
         self.player = [[Piggy alloc] init];
@@ -72,6 +74,11 @@
     self.lastGateSpawnTimeInterval += timeSinceLast;
     self.lastBackgroundTimeInterval += timeSinceLast;
     
+    // Don't do anything if the player is dead
+    if (!self.player || self.player.isDead) {
+        return;
+    }
+    
     // Check to see if it's time to spawn a gate
     if (self.lastGateSpawnTimeInterval > 4) {
         self.lastGateSpawnTimeInterval = 0;
@@ -93,7 +100,44 @@
             [self.player.physicsBody applyImpulse:CGVectorMake(0.0f, momentum)];
         }
     }
+    
+    // Check to see if the player is below the screen
+    if (self.player.position.y + self.player.size.height/2 <= 0) {
+        [self gameOver];
+    }
 }
+
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    SKPhysicsBody *firstBody, *secondBody;
+    
+    // Sort the bodies
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask) {
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    } else {
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    
+    // Check to see if player contacted a pipe
+    if ((firstBody.categoryBitMask & pipeCategory) != 0 &&
+        (secondBody.categoryBitMask & playerCategory) != 0)
+    {
+        // Player contacted a pipe - GAME OVER!
+        [self gameOver];
+        return;
+    }
+    
+    // Check to see if the player contacted a goal
+    if ((firstBody.categoryBitMask & goalCategory) != 0 &&
+        (secondBody.categoryBitMask & playerCategory) != 0)
+    {
+        // Player contacted the goal - SCORE!
+        self.score++;
+    }
+}
+
 
 - (void)addGate {
     // Determine where the center of the gate will be
@@ -122,5 +166,25 @@
     
     [background slideToPosition:CGPointMake(0, background.size.height/2) withDuration:30.0];
 }
+
+- (void)gameOver
+{
+    if (self.player.isDead) {
+        return; // Already dead
+    }
+    
+    // Kill the player
+    self.player.isDead = YES;
+    
+    // Stop all animations except the player
+    for (SKNode *node in self.children) {
+        if ([node.name isEqualToString:@"player"]) {
+            continue;
+        }
+        
+        [node removeAllActions];
+    }
+}
+
 
 @end
