@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		940124DC18ED1ABB00F8AEA5 /* StatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 940124DB18ED1ABB00F8AEA5 /* StatusLabel.m */; };
+		948FA3B318EFA5AA00F78E48 /* PipeFlame.sks in Resources */ = {isa = PBXBuildFile; fileRef = 948FA3B118EFA5AA00F78E48 /* PipeFlame.sks */; };
+		948FA3B418EFA5AA00F78E48 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 948FA3B218EFA5AA00F78E48 /* spark.png */; };
 		94D0D88E18ECFB5800229CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D0D88D18ECFB5800229CC1 /* Foundation.framework */; };
 		94D0D89018ECFB5800229CC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D0D88F18ECFB5800229CC1 /* CoreGraphics.framework */; };
 		94D0D89218ECFB5800229CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D0D89118ECFB5800229CC1 /* UIKit.framework */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		940124DA18ED1ABB00F8AEA5 /* StatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusLabel.h; sourceTree = "<group>"; };
 		940124DB18ED1ABB00F8AEA5 /* StatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusLabel.m; sourceTree = "<group>"; };
+		948FA3B118EFA5AA00F78E48 /* PipeFlame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PipeFlame.sks; sourceTree = "<group>"; };
+		948FA3B218EFA5AA00F78E48 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		94D0D88A18ECFB5800229CC1 /* FlappyPig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyPig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D0D88D18ECFB5800229CC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94D0D88F18ECFB5800229CC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,6 +182,8 @@
 				94D0D8AB18ECFB5900229CC1 /* MyScene.m */,
 				94D0D8AF18ECFB5900229CC1 /* Images.xcassets */,
 				94D0D89618ECFB5800229CC1 /* Supporting Files */,
+				948FA3B118EFA5AA00F78E48 /* PipeFlame.sks */,
+				948FA3B218EFA5AA00F78E48 /* spark.png */,
 			);
 			path = FlappyPig;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948FA3B418EFA5AA00F78E48 /* spark.png in Resources */,
 				94F19DF418ECFE440094F736 /* sprites.atlas in Resources */,
 				94D0D8B018ECFB5900229CC1 /* Images.xcassets in Resources */,
 				94F19DFA18ECFE6A0094F736 /* piggy.mp3 in Resources */,
@@ -296,6 +303,7 @@
 				94D0D8A318ECFB5800229CC1 /* Main_iPhone.storyboard in Resources */,
 				94F19DFC18ECFE6A0094F736 /* swoosh.caf in Resources */,
 				94D0D89A18ECFB5800229CC1 /* InfoPlist.strings in Resources */,
+				948FA3B318EFA5AA00F78E48 /* PipeFlame.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

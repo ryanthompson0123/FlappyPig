@@ -24,6 +24,17 @@
         self.physicsBody.dynamic = NO;  // Isn't moved by physics engine
         self.physicsBody.categoryBitMask = pipeCategory;
         self.physicsBody.contactTestBitMask = playerCategory;
+        
+        // Set up fire emitter for non-inverted pipes
+        if (!inverted) {
+            SKEmitterNode *emitter =  [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"PipeFlames" ofType:@"sks"]];
+            
+            // Place the emitter at the top of th
+            emitter.position = CGPointMake(0, self.size.height/2);
+            emitter.name = @"fire";
+            
+            [self addChild:emitter];
+        }
     }
     
     return self;
