@@ -1,4 +1,4 @@
 FlappyPig
 =========
 
-Flappy Pig
+iOS Sprite Kit example game for Boise Code Camp
